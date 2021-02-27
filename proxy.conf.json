@@ -1,0 +1,22 @@
+{
+    "/analysis/**": {
+        "target": "http://localhost:8585",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    },
+    "/daily/**": {
+        "target": "http://localhost:8585",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true
+    },
+    "/login/**": {
+        "target": "http://localhost:8585",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {"^/login" : ""}
+    }
+
+}

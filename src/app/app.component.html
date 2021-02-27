@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Side Navigation Bar</title>
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+         <a href="/home" class="navbar-brand">Boarding Analysis</a>  
+
+            <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+                <li class="nav-item">
+                    <a href="/login" class="nav-link" routerLink="login">Login</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+                <li class="nav-item">
+                    <a href="/profile" class="nav-link" routerLink="profile">Profile {{ username }}</a>
+                </li>
+                <li class="nav-item">
+                    <a href class="nav-link" (click)="logout()">LogOut</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="wrapper">
+            <div class="sidebar">
+                <h5>Managements</h5>
+                <ul>
+                    <li class="nav-item" *ngIf="isLoggedIn">
+                        <a role="button" (click)="goAnalysisListPage()" routerLink="/analysis-list">Analysis-list</a>
+                    </li>
+                    <li class="nav-item" *ngIf="isLoggedIn">
+                        <a role="button" (click)="goDailyDataPage()" routerLink="/daily-data">Daily Report</a>
+                    </li>
+
+                </ul>
+            </div>
+         
+            <div class="main_content">
+                <div class="container">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

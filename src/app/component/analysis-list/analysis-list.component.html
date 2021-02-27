@@ -1,0 +1,78 @@
+<div class="list row">
+
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <div class="main_content">
+            <div class="header"> The most used in last 2 months.
+            </div>
+
+            <TABLE border align="center">
+                <tr>
+                    <th>
+                        <div class="box-shadow"> </div>
+                    </th>
+                    <th>
+                        <div class="box-shadow">Date</div>
+                    </th>
+                    <th>
+                        <div class="box-shadow">Bus ID</div>
+                    </th>
+                    <th>
+                        <div class="box-shadow">Driver ID</div>
+                    </th>
+                    <th>
+                        <div class="box-shadow">Route Code</div>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="box-shadow-row">Value</div>
+                    </th>
+                    <td *ngFor="let item of retrievedDay">
+                        <div class="element"> {{item.TheMostAmountDay}} </div>
+                    </td>
+                    <td *ngFor="let item of retrievedBus">
+                        <div class="element"> {{item.busID}} </div>
+                    </td>
+                    <td *ngFor="let item of retrievedDriver">
+                        <div class="element"> {{item.driverID}} </div>
+                    </td>
+                    <td *ngFor="let item of retrievedRoute">
+                        <div class="element"> {{item.Route}} </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <div class="box-shadow-row">Total Usage Amount</div>
+                    </th>
+                    <td *ngFor="let item of retrievedDay">
+                        <div class="element"> {{item.TotalUsageAmt}} </div>
+                    </td>
+                    <td *ngFor="let item of retrievedBus">
+                        <div class="element"> {{item.TotalUsageAmt}} </div>
+                    </td>
+                    <td *ngFor="let item of retrievedDriver">
+                        <div class="element"> {{item.TotalUsageAmt}} </div>
+                    </td>
+                    <td *ngFor="let item of retrievedRoute">
+                        <div class="element"> {{item.TotalUsageAmt}} </div>
+                    </td>
+                </tr>
+            </TABLE>
+        </div>
+
+        <div class="chartjs-container">
+            <canvas baseChart 
+            [datasets]="barChartData" 
+            [labels]="barChartLabels" 
+            [options]="barChartOptions"
+            [plugins]="barChartPlugins" 
+            [legend]="barChartLegend" 
+            [chartType]="barChartType">
+            </canvas>
+        </div>
+    </body>
+</div>

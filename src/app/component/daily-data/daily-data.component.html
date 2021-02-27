@@ -1,0 +1,45 @@
+<body>
+    <div class="main_content">
+        <div class="header">  Daily Report 
+            <button class="button" (click)="refresh()" routerLink="/daily-data" >Refresh</button>
+         </div>  
+    <table class="table">
+            <thead class="thead">
+            <tr>
+                <th scope="col">Daily</th>
+                <th scope="col">Date</th>
+                <th scope="col">Total Count</th>
+                <th scope="col">Total Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of dateData">
+                <th scope="row"> </th>
+                <td>{{item.date}}</td>
+                <td>{{item.total_usage_count}}</td>
+                <td>{{item.total_usage_amount}}</td>
+            </tr>
+            <tr *ngFor="let item of busData">
+                <td>Bus ID: {{item.bus_id}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.total_usage_count}}</td>
+                <td>{{item.total_usage_amount}}</td>
+            </tr>
+            <tr *ngFor="let item of driverData">
+                <td> Driver ID: {{item.driver_id}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.total_usage_count}}</td>
+                <td>{{item.total_usage_amount}}</td>
+            </tr>
+            <tr *ngFor="let item of routeData">
+                <td>Route ID: {{item.route_id}}</td>
+                <td>{{item.date}}</td>
+                <td>{{item.total_usage_count}}</td>
+                <td>{{item.total_usage_amount}}</td>
+            </tr>
+            </tbody>
+    </table>
+  
+</div>
+</body>  
+  
